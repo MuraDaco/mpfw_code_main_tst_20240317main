@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?debugstack-directory version="1.0"?>
+<directory xmlns:xi="http://www.w3.org/2001/XInclude">
+   <xi:include href="file:/Users/work/ObsiData/repo__main/smdl/repo__prjs/smdl/mpfw/code/mpfw_code/main/mpfw_code_main_tst_20240317main/wsp/xpresso/workspace/nxp/.mcuxpressoide_packages_support/LPC54608J512_support/LPC546xx_dir_part.xml"/>
+</directory>

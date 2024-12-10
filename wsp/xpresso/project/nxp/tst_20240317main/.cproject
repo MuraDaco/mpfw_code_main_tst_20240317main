@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="com.crt.advproject.config.exe.debug.404965866">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.crt.advproject.config.exe.debug.404965866" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="axf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="Debug build" errorParsers="org.eclipse.cdt.core.CWDLocator;org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="com.crt.advproject.config.exe.debug.404965866" name="Debug" parent="com.crt.advproject.config.exe.debug" postannouncebuildStep="Performing post-build steps" postbuildStep="arm-none-eabi-size &quot;${BuildArtifactFileName}&quot;; # arm-none-eabi-objcopy -v -O binary &quot;${BuildArtifactFileName}&quot; &quot;${BuildArtifactFileBaseName}.bin&quot; ; # checksum -p ${TargetChip} -d &quot;${BuildArtifactFileBaseName}.bin&quot;;  ">
+					<folderInfo id="com.crt.advproject.config.exe.debug.404965866." name="/" resourcePath="">
+						<toolChain id="com.crt.advproject.toolchain.exe.debug.1978953559" name="NXP MCU Tools" superClass="com.crt.advproject.toolchain.exe.debug">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.GNU_ELF" id="com.crt.advproject.platform.exe.debug.613571864" name="ARM-based MCU (Debug)" superClass="com.crt.advproject.platform.exe.debug"/>
+							<builder buildPath="${workspace_loc:/tst_20240317main}/Debug" id="com.crt.advproject.builder.exe.debug.1842371645" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.crt.advproject.builder.exe.debug"/>
+							<tool id="com.crt.advproject.cpp.exe.debug.499836794" name="MCU C++ Compiler" superClass="com.crt.advproject.cpp.exe.debug">
+								<option id="com.crt.advproject.cpp.hdrlib.485013499" name="Library headers" superClass="com.crt.advproject.cpp.hdrlib" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.cpp.fpu.1647028502" name="Floating point" superClass="com.crt.advproject.cpp.fpu" useByScannerDiscovery="true" value="com.crt.advproject.cpp.fpu.fpv4.hard" valueType="enumerated"/>
+								<option id="com.crt.advproject.cpp.thumb.800314936" name="Thumb mode" superClass="com.crt.advproject.cpp.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.cpp.specs.1439437288" name="Specs" superClass="com.crt.advproject.cpp.specs" useByScannerDiscovery="false" value="com.crt.advproject.cpp.specs.newlibnano" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.165287300" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="WP_PLATFORM_NXP"/>
+									<listOptionValue builtIn="false" value="CPU_LPC54608J512ET180"/>
+									<listOptionValue builtIn="false" value="CPU_LPC54608J512ET180_cm4"/>
+									<listOptionValue builtIn="false" value="FSL_RTOS_FREE_RTOS"/>
+									<listOptionValue builtIn="false" value="SDK_OS_FREE_RTOS"/>
+									<listOptionValue builtIn="false" value="SERIAL_PORT_TYPE_UART=1"/>
+									<listOptionValue builtIn="false" value="SDK_DEBUGCONSOLE=1"/>
+									<listOptionValue builtIn="false" value="__MCUXPRESSO"/>
+									<listOptionValue builtIn="false" value="__USE_CMSIS"/>
+									<listOptionValue builtIn="false" value="NDEBUG"/>
+									<listOptionValue builtIn="false" value="__NEWLIB__"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.2056749938" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="${CODE_DIR}/apps"/>
+									<listOptionValue builtIn="false" value="${CODE_DIR}/libs"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${MAIN_NAME}/${FW2_WRAPPER_CORE_CONF_RPATH}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${MAIN_NAME}/${SDK_PLATFORM_CONF_RPATH}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/cg}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/kr/krThread/v_${tst_20240317app_AP_KR_THREAD02_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/kr/krTimer/v_${tst_20240317app_AP_KR_TIMER01_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/mn/mg}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/sv/svState/v_${tst_20240317app_AP_SV_STATE_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/sv/svStateMachine/v_${tst_20240317app_AP_SV_STATE_MACHINE_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/sv/svSync/v_${tst_20240317app_AP_SV_SYNC_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/kr/krInit/v_${tst_20240317app_TB_KR_INIT_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/kr/krThread/v_${tst_20240317app_TB_KR_THREAD_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/kr/krTimer/v_${tst_20240317app_TB_KR_TIMER_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/sv/svStateMachine/v_${tst_20240317app_TB_SV_STATE_MACHINE_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_resources/nxp/src/rs/rsSerial/v_${fw2_wrapper_resources_RS_SERIAL_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/cg}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/cs}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/dg/dgFormatDigit/v_${fw2_core_core_DG_FORMAT_DIGIT_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/dg/dgInterface/v_${fw2_core_core_DG_INTERFACE_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/dt/dtDef/v_${fw2_core_core_DT_DEF_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/kr/krEvent/v_${fw2_core_core_KR_EVENT_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/kr/krInit/v_${fw2_core_core_KR_INIT_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/kr/krTimer/v_${fw2_core_core_KR_TIMER_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/sv/svState/v_${fw2_core_core_SV_STATE_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/sv/svStateMachine/v_${fw2_core_core_SV_STATE_MACHINE_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/sv/svSync/v_${fw2_core_core_SV_SYNC_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/uy/uyProtocol/v_${fw2_core_core_UY_PROTOCOL_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_core/common/src/kr/krThread/v_${fw2_wrapper_core_KR_THREAD_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_core/nxp/src/kr/krThread/v_${fw2_wrapper_core_KR_THREAD_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_core/nxp/src/sy/syThread/v_${fw2_wrapper_core_SY_THREAD_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_core/nxp/src/tb/kr/krThread/v_${fw2_wrapper_core_TB_KR_THREAD_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/CMSIS}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/amazon-freertos/freertos_kernel/include}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/board}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/component/lists}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/component/serial_manager}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/component/uart}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/device}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/drivers/freertos}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/drivers}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/utilities}"/>
+								</option>
+								<option id="com.crt.advproject.cpp.exe.debug.option.optimization.level.692096847" name="Optimization Level" superClass="com.crt.advproject.cpp.exe.debug.option.optimization.level" useByScannerDiscovery="true" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="com.crt.advproject.cpp.arch.511279315" name="Architecture" superClass="com.crt.advproject.cpp.arch" useByScannerDiscovery="true" value="com.crt.advproject.cpp.target.cm4" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.other.other.1967591956" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -Wfatal-errors -fno-common -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fno-rtti -fno-exceptions" valueType="string"/>
+								<option id="com.crt.advproject.cpp.misc.dialect.660656686" name="Language standard" superClass="com.crt.advproject.cpp.misc.dialect" useByScannerDiscovery="true" value="com.crt.advproject.misc.dialect.gnupp14" valueType="enumerated"/>
+								<option id="com.crt.advproject.cpp.merge.constants.695397926" name="Merge Identical Constants (-fmerge-constants)" superClass="com.crt.advproject.cpp.merge.constants" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<inputType id="com.crt.advproject.compiler.cpp.input.353153945" superClass="com.crt.advproject.compiler.cpp.input"/>
+							</tool>
+							<tool id="com.crt.advproject.gcc.exe.debug.584488020" name="MCU C Compiler" superClass="com.crt.advproject.gcc.exe.debug">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.464026426" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="WP_PLATFORM_NXP"/>
+									<listOptionValue builtIn="false" value="CPU_LPC54608J512ET180"/>
+									<listOptionValue builtIn="false" value="CPU_LPC54608J512ET180_cm4"/>
+									<listOptionValue builtIn="false" value="FSL_RTOS_FREE_RTOS"/>
+									<listOptionValue builtIn="false" value="SDK_OS_FREE_RTOS"/>
+									<listOptionValue builtIn="false" value="SERIAL_PORT_TYPE_UART=1"/>
+									<listOptionValue builtIn="false" value="SDK_DEBUGCONSOLE=1"/>
+									<listOptionValue builtIn="false" value="__MCUXPRESSO"/>
+									<listOptionValue builtIn="false" value="__USE_CMSIS"/>
+									<listOptionValue builtIn="false" value="NDEBUG"/>
+									<listOptionValue builtIn="false" value="__NEWLIB__"/>
+								</option>
+								<option id="com.crt.advproject.gcc.thumb.739857283" name="Thumb mode" superClass="com.crt.advproject.gcc.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.gcc.hdrlib.535448495" name="Library headers" superClass="com.crt.advproject.gcc.hdrlib" useByScannerDiscovery="false" value="com.crt.advproject.gcc.hdrlib.newlibnano" valueType="enumerated"/>
+								<option id="com.crt.advproject.gcc.specs.674779081" name="Specs" superClass="com.crt.advproject.gcc.specs" useByScannerDiscovery="false" value="com.crt.advproject.gcc.specs.newlibnano" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.1850611109" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="${workspace_loc:/${MAIN_NAME}/${SDK_PLATFORM_CONF_RPATH}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/CMSIS}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/amazon-freertos/freertos_kernel/include}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/board}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/component/lists}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/component/serial_manager}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/component/uart}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/device}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/drivers/freertos}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/drivers}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/utilities}"/>
+								</option>
+								<option id="com.crt.advproject.gcc.exe.debug.option.optimization.level.1713769410" name="Optimization Level" superClass="com.crt.advproject.gcc.exe.debug.option.optimization.level" useByScannerDiscovery="true" value="gnu.c.optimization.level.most" valueType="enumerated"/>
+								<option id="com.crt.advproject.gcc.arch.348102640" name="Architecture" superClass="com.crt.advproject.gcc.arch" useByScannerDiscovery="true" value="com.crt.advproject.gcc.target.cm4" valueType="enumerated"/>
+								<option id="com.crt.advproject.gcc.fpu.239552698" name="Floating point" superClass="com.crt.advproject.gcc.fpu" useByScannerDiscovery="true" value="com.crt.advproject.gcc.fpu.fpv4.hard" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.misc.other.1176021140" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -Wfatal-errors -fno-common -ffunction-sections -fdata-sections -ffreestanding -fno-builtin" valueType="string"/>
+								<inputType id="com.crt.advproject.compiler.input.1108127866" superClass="com.crt.advproject.compiler.input"/>
+							</tool>
+							<tool id="com.crt.advproject.gas.exe.debug.62296563" name="MCU Assembler" superClass="com.crt.advproject.gas.exe.debug">
+								<option id="com.crt.advproject.gas.thumb.825817922" name="Thumb mode" superClass="com.crt.advproject.gas.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.gas.hdrlib.715603085" name="Library headers" superClass="com.crt.advproject.gas.hdrlib" useByScannerDiscovery="false" value="com.crt.advproject.gas.hdrlib.newlibnano" valueType="enumerated"/>
+								<option id="com.crt.advproject.gas.specs.1293185395" name="Specs" superClass="com.crt.advproject.gas.specs" useByScannerDiscovery="false" value="com.crt.advproject.gas.specs.newlibnano" valueType="enumerated"/>
+								<option id="com.crt.advproject.gas.arch.279489529" name="Architecture" superClass="com.crt.advproject.gas.arch" useByScannerDiscovery="false" value="com.crt.advproject.gas.target.cm4" valueType="enumerated"/>
+								<option id="com.crt.advproject.gas.fpu.400049061" name="Floating point" superClass="com.crt.advproject.gas.fpu" useByScannerDiscovery="false" value="com.crt.advproject.gas.fpu.fpv4.hard" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="gnu.both.asm.option.include.paths.697272148" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" useByScannerDiscovery="false" valueType="includePath"/>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1378499357" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+								<inputType id="com.crt.advproject.assembler.input.1115789672" name="Additional Assembly Source Files" superClass="com.crt.advproject.assembler.input"/>
+							</tool>
+							<tool id="com.crt.advproject.link.cpp.exe.debug.1735733666" name="MCU C++ Linker" superClass="com.crt.advproject.link.cpp.exe.debug">
+								<option id="com.crt.advproject.link.cpp.thumb.1828905009" name="Thumb mode" superClass="com.crt.advproject.link.cpp.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.link.memory.load.image.cpp.803307258" name="Plain load image" superClass="com.crt.advproject.link.memory.load.image.cpp" useByScannerDiscovery="false" value="false;" valueType="string"/>
+								<option defaultValue="com.crt.advproject.heapAndStack.mcuXpressoStyle.cpp" id="com.crt.advproject.link.memory.heapAndStack.style.cpp.52460922" name="Heap and Stack placement" superClass="com.crt.advproject.link.memory.heapAndStack.style.cpp" useByScannerDiscovery="false" value="com.crt.advproject.heapAndStack.mcuXpressoStyle.cpp" valueType="enumerated"/>
+								<option id="com.crt.advproject.link.memory.heapAndStack.cpp.578936332" name="Heap and Stack options" superClass="com.crt.advproject.link.memory.heapAndStack.cpp" useByScannerDiscovery="false" value="&amp;Heap:Default;Post Data;Default&amp;Stack:Default;End;Default" valueType="string"/>
+								<option id="com.crt.advproject.link.memory.data.cpp.267626812" name="Global data placement" superClass="com.crt.advproject.link.memory.data.cpp" useByScannerDiscovery="false" value="Default" valueType="string"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="com.crt.advproject.link.memory.sections.cpp.252829039" name="Extra linker script input sections" superClass="com.crt.advproject.link.memory.sections.cpp" useByScannerDiscovery="false" valueType="stringList"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="com.crt.advproject.link.cpp.multicore.master.userobjs.632219711" name="Slave Objects (not visible)" superClass="com.crt.advproject.link.cpp.multicore.master.userobjs" useByScannerDiscovery="false" valueType="userObjs"/>
+								<option id="com.crt.advproject.link.cpp.multicore.slave.1552491805" name="Multicore configuration" superClass="com.crt.advproject.link.cpp.multicore.slave" useByScannerDiscovery="false"/>
+								<option id="gnu.cpp.link.option.nostdlibs.51343266" name="No startup or default libs (-nostdlib)" superClass="gnu.cpp.link.option.nostdlibs" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.162005048" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/Debug}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_resources/Debug}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/Debug}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_core/Debug}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/Debug}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_resources/Debug}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/libs}"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.1182368800" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="tst_20240317app"/>
+									<listOptionValue builtIn="false" value="fw2_wrapper_resources"/>
+									<listOptionValue builtIn="false" value="fw2_core_core"/>
+									<listOptionValue builtIn="false" value="fw2_wrapper_core"/>
+									<listOptionValue builtIn="false" value="sdk_nxp"/>
+									<listOptionValue builtIn="false" value="fw2_wrapper_resources"/>
+									<listOptionValue builtIn="false" value="power_hardabi"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.other.11523298" name="Other options (-Xlinker [option])" superClass="gnu.cpp.link.option.other" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="-Map=&quot;LPC54608_tst_freertos.map&quot;"/>
+									<listOptionValue builtIn="false" value="--gc-sections"/>
+									<listOptionValue builtIn="false" value="-print-memory-usage"/>
+									<listOptionValue builtIn="false" value="--sort-section=alignment"/>
+									<listOptionValue builtIn="false" value="--cref"/>
+								</option>
+								<option id="com.crt.advproject.link.cpp.arch.668355930" name="Architecture" superClass="com.crt.advproject.link.cpp.arch" useByScannerDiscovery="false" value="com.crt.advproject.link.cpp.target.cm4" valueType="enumerated"/>
+								<option id="com.crt.advproject.link.cpp.fpu.1753288519" name="Floating point" superClass="com.crt.advproject.link.cpp.fpu" useByScannerDiscovery="false" value="com.crt.advproject.link.cpp.fpu.fpv4.hard" valueType="enumerated"/>
+								<option id="com.crt.advproject.link.cpp.manage.402300103" name="Manage linker script" superClass="com.crt.advproject.link.cpp.manage" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.link.cpp.hdrlib.11266859" name="Library" superClass="com.crt.advproject.link.cpp.hdrlib" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.cpp.script.1693622937" name="Linker script" superClass="com.crt.advproject.link.cpp.script" useByScannerDiscovery="false" value="tst_20240317main_Debug.ld" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1275093113" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.crt.advproject.link.exe.debug.1536637122" name="MCU Linker" superClass="com.crt.advproject.link.exe.debug">
+								<option id="com.crt.advproject.link.gcc.hdrlib.779333407" name="Library" superClass="com.crt.advproject.link.gcc.hdrlib"/>
+							</tool>
+							<tool id="com.crt.advproject.tool.debug.debug.898169554" name="MCU Debugger" superClass="com.crt.advproject.tool.debug.debug"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="common/cg/libs/fw2_wrapper_core"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="common/tb/tb/kr/krInit/v_${tst_20240317main_TB_KR_INIT_VER}"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="common/tb/tb/kr/krThread/v_${tst_20240317main_TB_KR_THREAD_VER}"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="common/tb/tb/kr/krTimer/v_${tst_20240317main_TB_KR_TIMER_VER}"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="common/tb/tb/sv/svStateMachine/v_${tst_20240317main_TB_SV_STATE_MACHINE_VER}"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="nxp/Inc"/>
+						<entry excluding="LPC54608_tst_freertos_fw2.cpp|LPC54608_tst_freertos_original.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="nxp/Src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="com.crt.advproject.config.exe.release.852024635">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.crt.advproject.config.exe.release.852024635" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="axf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="Release build" errorParsers="org.eclipse.cdt.core.CWDLocator;org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="com.crt.advproject.config.exe.release.852024635" name="Release" parent="com.crt.advproject.config.exe.release" postannouncebuildStep="Performing post-build steps" postbuildStep="arm-none-eabi-size &quot;${BuildArtifactFileName}&quot;; # arm-none-eabi-objcopy -v -O binary &quot;${BuildArtifactFileName}&quot; &quot;${BuildArtifactFileBaseName}.bin&quot; ; # checksum -p ${TargetChip} -d &quot;${BuildArtifactFileBaseName}.bin&quot;;  ">
+					<folderInfo id="com.crt.advproject.config.exe.release.852024635." name="/" resourcePath="">
+						<toolChain id="com.crt.advproject.toolchain.exe.release.319440110" name="NXP MCU Tools" superClass="com.crt.advproject.toolchain.exe.release">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.GNU_ELF" id="com.crt.advproject.platform.exe.release.539017994" name="ARM-based MCU (Release)" superClass="com.crt.advproject.platform.exe.release"/>
+							<builder buildPath="${workspace_loc:/tst_20240317main}/Release" id="com.crt.advproject.builder.exe.release.863675637" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.crt.advproject.builder.exe.release"/>
+							<tool id="com.crt.advproject.cpp.exe.release.970784053" name="MCU C++ Compiler" superClass="com.crt.advproject.cpp.exe.release">
+								<option id="com.crt.advproject.cpp.thumb.227835023" name="Thumb mode" superClass="com.crt.advproject.cpp.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.cpp.specs.1060724559" name="Specs" superClass="com.crt.advproject.cpp.specs" useByScannerDiscovery="false" value="com.crt.advproject.cpp.specs.newlibnano" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.954724158" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="WP_PLATFORM_NXP"/>
+									<listOptionValue builtIn="false" value="CPU_LPC54608J512ET180"/>
+									<listOptionValue builtIn="false" value="CPU_LPC54608J512ET180_cm4"/>
+									<listOptionValue builtIn="false" value="FSL_RTOS_FREE_RTOS"/>
+									<listOptionValue builtIn="false" value="SDK_OS_FREE_RTOS"/>
+									<listOptionValue builtIn="false" value="SERIAL_PORT_TYPE_UART=1"/>
+									<listOptionValue builtIn="false" value="SDK_DEBUGCONSOLE=1"/>
+									<listOptionValue builtIn="false" value="__MCUXPRESSO"/>
+									<listOptionValue builtIn="false" value="__USE_CMSIS"/>
+									<listOptionValue builtIn="false" value="NDEBUG"/>
+									<listOptionValue builtIn="false" value="__NEWLIB__"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.446564319" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="${CODE_DIR}/apps"/>
+									<listOptionValue builtIn="false" value="${CODE_DIR}/libs"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${MAIN_NAME}/${FW2_WRAPPER_CORE_CONF_RPATH}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${MAIN_NAME}/${SDK_PLATFORM_CONF_RPATH}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/cg}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/kr/krThread/v_${tst_20240317app_AP_KR_THREAD02_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/kr/krTimer/v_${tst_20240317app_AP_KR_TIMER01_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/mn/mg}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/sv/svState/v_${tst_20240317app_AP_SV_STATE_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/sv/svStateMachine/v_${tst_20240317app_AP_SV_STATE_MACHINE_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/sv/svSync/v_${tst_20240317app_AP_SV_SYNC_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/kr/krInit/v_${tst_20240317app_TB_KR_INIT_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/kr/krThread/v_${tst_20240317app_TB_KR_THREAD_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/kr/krTimer/v_${tst_20240317app_TB_KR_TIMER_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/sv/svStateMachine/v_${tst_20240317app_TB_SV_STATE_MACHINE_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_resources/nxp/src/rs/rsSerial/v_${fw2_wrapper_resources_RS_SERIAL_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/cg}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/cs}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/dg/dgFormatDigit/v_${fw2_core_core_DG_FORMAT_DIGIT_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/dg/dgInterface/v_${fw2_core_core_DG_INTERFACE_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/dt/dtDef/v_${fw2_core_core_DT_DEF_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/kr/krEvent/v_${fw2_core_core_KR_EVENT_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/kr/krInit/v_${fw2_core_core_KR_INIT_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/kr/krTimer/v_${fw2_core_core_KR_TIMER_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/sv/svState/v_${fw2_core_core_SV_STATE_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/sv/svStateMachine/v_${fw2_core_core_SV_STATE_MACHINE_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/sv/svSync/v_${fw2_core_core_SV_SYNC_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/uy/uyProtocol/v_${fw2_core_core_UY_PROTOCOL_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_core/common/src/kr/krThread/v_${fw2_wrapper_core_KR_THREAD_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_core/nxp/src/kr/krThread/v_${fw2_wrapper_core_KR_THREAD_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_core/nxp/src/sy/syThread/v_${fw2_wrapper_core_SY_THREAD_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_core/nxp/src/tb/kr/krThread/v_${fw2_wrapper_core_TB_KR_THREAD_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/CMSIS}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/amazon-freertos/freertos_kernel/include}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/board}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/component/lists}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/component/serial_manager}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/component/uart}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/device}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/drivers/freertos}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/drivers}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/utilities}"/>
+								</option>
+								<option id="com.crt.advproject.cpp.exe.release.option.optimization.level.1535719773" name="Optimization Level" superClass="com.crt.advproject.cpp.exe.release.option.optimization.level" useByScannerDiscovery="true" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="com.crt.advproject.cpp.exe.release.option.debugging.level.1438244399" name="Debug Level" superClass="com.crt.advproject.cpp.exe.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.other.other.1588684110" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -Wfatal-errors -fno-common -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fno-rtti -fno-exceptions" valueType="string"/>
+								<option id="com.crt.advproject.cpp.arch.514193451" name="Architecture" superClass="com.crt.advproject.cpp.arch" useByScannerDiscovery="true" value="com.crt.advproject.cpp.target.cm4" valueType="enumerated"/>
+								<option id="com.crt.advproject.cpp.fpu.1479950374" name="Floating point" superClass="com.crt.advproject.cpp.fpu" useByScannerDiscovery="true" value="com.crt.advproject.cpp.fpu.fpv4.hard" valueType="enumerated"/>
+								<option id="com.crt.advproject.cpp.misc.dialect.1101764654" name="Language standard" superClass="com.crt.advproject.cpp.misc.dialect" useByScannerDiscovery="true" value="com.crt.advproject.misc.dialect.gnupp14" valueType="enumerated"/>
+								<option id="com.crt.advproject.cpp.hdrlib.450333588" name="Library headers" superClass="com.crt.advproject.cpp.hdrlib" useByScannerDiscovery="false"/>
+								<inputType id="com.crt.advproject.compiler.cpp.input.1768772733" superClass="com.crt.advproject.compiler.cpp.input"/>
+							</tool>
+							<tool id="com.crt.advproject.gcc.exe.release.1177399372" name="MCU C Compiler" superClass="com.crt.advproject.gcc.exe.release">
+								<option id="com.crt.advproject.gcc.thumb.1139852659" name="Thumb mode" superClass="com.crt.advproject.gcc.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.gcc.hdrlib.1794990481" name="Library headers" superClass="com.crt.advproject.gcc.hdrlib" useByScannerDiscovery="false" value="com.crt.advproject.gcc.hdrlib.newlibnano" valueType="enumerated"/>
+								<option id="com.crt.advproject.gcc.specs.1844014464" name="Specs" superClass="com.crt.advproject.gcc.specs" useByScannerDiscovery="false" value="com.crt.advproject.gcc.specs.newlibnano" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.2138814053" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="WP_PLATFORM_NXP"/>
+									<listOptionValue builtIn="false" value="CPU_LPC54608J512ET180"/>
+									<listOptionValue builtIn="false" value="CPU_LPC54608J512ET180_cm4"/>
+									<listOptionValue builtIn="false" value="FSL_RTOS_FREE_RTOS"/>
+									<listOptionValue builtIn="false" value="SDK_OS_FREE_RTOS"/>
+									<listOptionValue builtIn="false" value="SERIAL_PORT_TYPE_UART=1"/>
+									<listOptionValue builtIn="false" value="SDK_DEBUGCONSOLE=1"/>
+									<listOptionValue builtIn="false" value="__MCUXPRESSO"/>
+									<listOptionValue builtIn="false" value="__USE_CMSIS"/>
+									<listOptionValue builtIn="false" value="NDEBUG"/>
+									<listOptionValue builtIn="false" value="__NEWLIB__"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.2129372167" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="${workspace_loc:/${MAIN_NAME}/${SDK_PLATFORM_CONF_RPATH}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/CMSIS}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/amazon-freertos/freertos_kernel/include}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/amazon-freertos/freertos_kernel/portable/GCC/ARM_CM4F}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/board}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/component/lists}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/component/serial_manager}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/component/uart}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/device}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/drivers/freertos}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/drivers}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/utilities}"/>
+								</option>
+								<option id="com.crt.advproject.gcc.exe.release.option.optimization.level.347316097" name="Optimization Level" superClass="com.crt.advproject.gcc.exe.release.option.optimization.level" useByScannerDiscovery="true" value="gnu.c.optimization.level.most" valueType="enumerated"/>
+								<option id="com.crt.advproject.gcc.exe.release.option.debugging.level.1570677994" name="Debug Level" superClass="com.crt.advproject.gcc.exe.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.misc.other.608585071" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -Wfatal-errors -fno-common -ffunction-sections -fdata-sections -ffreestanding -fno-builtin" valueType="string"/>
+								<option id="com.crt.advproject.gcc.arch.207875259" name="Architecture" superClass="com.crt.advproject.gcc.arch" useByScannerDiscovery="true" value="com.crt.advproject.gcc.target.cm4" valueType="enumerated"/>
+								<option id="com.crt.advproject.gcc.fpu.1255856337" name="Floating point" superClass="com.crt.advproject.gcc.fpu" useByScannerDiscovery="true" value="com.crt.advproject.gcc.fpu.fpv4.hard" valueType="enumerated"/>
+								<inputType id="com.crt.advproject.compiler.input.1725664001" superClass="com.crt.advproject.compiler.input"/>
+							</tool>
+							<tool id="com.crt.advproject.gas.exe.release.1060796060" name="MCU Assembler" superClass="com.crt.advproject.gas.exe.release">
+								<option id="com.crt.advproject.gas.thumb.1801677385" name="Thumb mode" superClass="com.crt.advproject.gas.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.gas.hdrlib.922918812" name="Library headers" superClass="com.crt.advproject.gas.hdrlib" useByScannerDiscovery="false" value="com.crt.advproject.gas.hdrlib.newlibnano" valueType="enumerated"/>
+								<option id="com.crt.advproject.gas.specs.597520954" name="Specs" superClass="com.crt.advproject.gas.specs" useByScannerDiscovery="false" value="com.crt.advproject.gas.specs.newlibnano" valueType="enumerated"/>
+								<option id="com.crt.advproject.gas.arch.51338240" name="Architecture" superClass="com.crt.advproject.gas.arch" useByScannerDiscovery="false" value="com.crt.advproject.gas.target.cm4" valueType="enumerated"/>
+								<option id="com.crt.advproject.gas.fpu.2032021079" name="Floating point" superClass="com.crt.advproject.gas.fpu" useByScannerDiscovery="false" value="com.crt.advproject.gas.fpu.fpv4.hard" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="gnu.both.asm.option.include.paths.654564887" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" useByScannerDiscovery="false" valueType="includePath"/>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1009396794" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+								<inputType id="com.crt.advproject.assembler.input.1187319663" name="Additional Assembly Source Files" superClass="com.crt.advproject.assembler.input"/>
+							</tool>
+							<tool id="com.crt.advproject.link.cpp.exe.release.656567694" name="MCU C++ Linker" superClass="com.crt.advproject.link.cpp.exe.release">
+								<option id="com.crt.advproject.link.cpp.thumb.1661267237" name="Thumb mode" superClass="com.crt.advproject.link.cpp.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.link.memory.load.image.cpp.1980511659" name="Plain load image" superClass="com.crt.advproject.link.memory.load.image.cpp" useByScannerDiscovery="false" value="false;SRAM_UPPER" valueType="string"/>
+								<option defaultValue="com.crt.advproject.heapAndStack.mcuXpressoStyle.cpp" id="com.crt.advproject.link.memory.heapAndStack.style.cpp.1581588119" name="Heap and Stack placement" superClass="com.crt.advproject.link.memory.heapAndStack.style.cpp" useByScannerDiscovery="false" value="com.crt.advproject.heapAndStack.mcuXpressoStyle.cpp" valueType="enumerated"/>
+								<option id="com.crt.advproject.link.memory.heapAndStack.cpp.1749949073" name="Heap and Stack options" superClass="com.crt.advproject.link.memory.heapAndStack.cpp" useByScannerDiscovery="false" value="&amp;Heap:Default;Post Data;Default&amp;Stack:Default;End;Default" valueType="string"/>
+								<option id="com.crt.advproject.link.memory.data.cpp.1070183655" name="Global data placement" superClass="com.crt.advproject.link.memory.data.cpp" useByScannerDiscovery="false" value="Default" valueType="string"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="com.crt.advproject.link.memory.sections.cpp.1549680613" name="Extra linker script input sections" superClass="com.crt.advproject.link.memory.sections.cpp" useByScannerDiscovery="false" valueType="stringList"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="com.crt.advproject.link.cpp.multicore.master.userobjs.1647708440" name="Slave Objects (not visible)" superClass="com.crt.advproject.link.cpp.multicore.master.userobjs" useByScannerDiscovery="false" valueType="userObjs"/>
+								<option id="com.crt.advproject.link.cpp.multicore.slave.1676625813" name="Multicore configuration" superClass="com.crt.advproject.link.cpp.multicore.slave" useByScannerDiscovery="false"/>
+								<option id="gnu.cpp.link.option.nostdlibs.951291310" name="No startup or default libs (-nostdlib)" superClass="gnu.cpp.link.option.nostdlibs" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.21668087" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="tst_20240317app"/>
+									<listOptionValue builtIn="false" value="fw2_wrapper_resources"/>
+									<listOptionValue builtIn="false" value="fw2_core_core"/>
+									<listOptionValue builtIn="false" value="fw2_wrapper_core"/>
+									<listOptionValue builtIn="false" value="sdk_nxp"/>
+									<listOptionValue builtIn="false" value="fw2_wrapper_resources"/>
+									<listOptionValue builtIn="false" value="power_hardabi"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.908180795" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
+									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/Release}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_resources/Release}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/Release}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_core/Release}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/Release}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_resources/Release}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/sdk_nxp/src/v_${sdk_nxp_SDK_PLATFORM_LIB_VER}/libs}"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.other.1482966350" name="Other options (-Xlinker [option])" superClass="gnu.cpp.link.option.other" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="-Map=&quot;LPC54608_tst_freertos.map&quot;"/>
+									<listOptionValue builtIn="false" value="--gc-sections"/>
+									<listOptionValue builtIn="false" value="-print-memory-usage"/>
+									<listOptionValue builtIn="false" value="--sort-section=alignment"/>
+									<listOptionValue builtIn="false" value="--cref"/>
+								</option>
+								<option id="com.crt.advproject.link.cpp.arch.1540568257" name="Architecture" superClass="com.crt.advproject.link.cpp.arch" useByScannerDiscovery="false" value="com.crt.advproject.link.cpp.target.cm4" valueType="enumerated"/>
+								<option id="com.crt.advproject.link.cpp.fpu.47396063" name="Floating point" superClass="com.crt.advproject.link.cpp.fpu" useByScannerDiscovery="false" value="com.crt.advproject.link.cpp.fpu.fpv4.hard" valueType="enumerated"/>
+								<option id="com.crt.advproject.link.cpp.manage.1209313448" name="Manage linker script" superClass="com.crt.advproject.link.cpp.manage" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.link.cpp.toram.896232055" name="Link application to RAM" superClass="com.crt.advproject.link.cpp.toram" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="com.crt.advproject.link.cpp.hdrlib.591484924" name="Library" superClass="com.crt.advproject.link.cpp.hdrlib" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.cpp.script.824900591" name="Linker script" superClass="com.crt.advproject.link.cpp.script" useByScannerDiscovery="false" value="tst_20240317main.ld" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.2107325804" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.crt.advproject.link.exe.release.1540123375" name="MCU Linker" superClass="com.crt.advproject.link.exe.release">
+								<option id="com.crt.advproject.link.gcc.hdrlib.2045610084" name="Library" superClass="com.crt.advproject.link.gcc.hdrlib"/>
+							</tool>
+							<tool id="com.crt.advproject.tool.debug.release.1861997936" name="MCU Debugger" superClass="com.crt.advproject.tool.debug.release"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="common/cg/libs/fw2_wrapper_core"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="common/tb/tb/kr/krInit/v_${tst_20240317main_TB_KR_INIT_VER}"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="common/tb/tb/kr/krThread/v_${tst_20240317main_TB_KR_THREAD_VER}"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="common/tb/tb/kr/krTimer/v_${tst_20240317main_TB_KR_TIMER_VER}"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="common/tb/tb/sv/svStateMachine/v_${tst_20240317main_TB_SV_STATE_MACHINE_VER}"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="nxp/Inc"/>
+						<entry excluding="LPC54608_tst_freertos_fw2.cpp|LPC54608_tst_freertos_original.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="nxp/Src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="tst_20240317main.com.crt.advproject.projecttype.exe.999280384" name="Executable" projectType="com.crt.advproject.projecttype.exe"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/tst_20240317main"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/tst_20240317main"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="com.crt.config">
+		<projectStorage>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;TargetConfig&gt;
+&lt;Properties property_3="NXP" property_4="LPC54608J512" property_count="5" version="100300"/&gt;
+&lt;infoList vendor="NXP"&gt;
+&lt;info chip="LPC54608J512" name="LPC54608J512"&gt;
+&lt;chip&gt;
+&lt;name&gt;LPC54608J512&lt;/name&gt;
+&lt;family&gt;LPC546xx&lt;/family&gt;
+&lt;vendor&gt;NXP&lt;/vendor&gt;
+&lt;memory can_program="true" id="Flash" is_ro="true" size="512" type="Flash"/&gt;
+&lt;memory id="RAM" size="192" type="RAM"/&gt;
+&lt;memoryInstance derived_from="Flash" driver="LPC5460x_512K.cfx" id="PROGRAM_FLASH" location="0x00000000" size="0x00080000"/&gt;
+&lt;memoryInstance derived_from="RAM" id="SRAM_UPPER" location="0x20000000" size="0x00028000"/&gt;
+&lt;memoryInstance derived_from="RAM" id="SRAMX" location="0x04000000" size="0x00008000"/&gt;
+&lt;memoryInstance derived_from="RAM" id="USB_RAM" location="0x40100000" size="0x00002000"/&gt;
+&lt;/chip&gt;
+&lt;processor&gt;
+&lt;name gcc_name="cortex-m4"&gt;Cortex-M4&lt;/name&gt;
+&lt;family&gt;Cortex-M&lt;/family&gt;
+&lt;/processor&gt;
+&lt;/info&gt;
+&lt;/infoList&gt;
+&lt;/TargetConfig&gt;</projectStorage>
+	</storageModule>
+	<storageModule moduleId="com.nxp.mcuxpresso.core.datamodels">
+		<sdkName>SDK_2.x_LPCXpresso54608</sdkName>
+		<sdkVersion>2.7.0</sdkVersion>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.release.852024635;com.crt.advproject.config.exe.release.852024635.;com.crt.advproject.cpp.exe.release.970784053;com.crt.advproject.compiler.cpp.input.1768772733">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.crt.advproject.GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.debug.404965866;com.crt.advproject.config.exe.debug.404965866.;com.crt.advproject.cpp.exe.debug.499836794;com.crt.advproject.compiler.cpp.input.353153945">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.crt.advproject.GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.debug.404965866;com.crt.advproject.config.exe.debug.404965866.;com.crt.advproject.gcc.exe.debug.584488020;com.crt.advproject.compiler.input.1108127866">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.crt.advproject.GCCManagedMakePerProjectProfile"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.release.852024635;com.crt.advproject.config.exe.release.852024635.;com.crt.advproject.gcc.exe.release.1177399372;com.crt.advproject.compiler.input.1725664001">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.crt.advproject.GCCManagedMakePerProjectProfile"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.debug.404965866;com.crt.advproject.config.exe.debug.404965866.;com.crt.advproject.gas.exe.debug.62296563;com.crt.advproject.assembler.input.1115789672">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.crt.advproject.GCCManagedMakePerProjectProfile"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.release.852024635;com.crt.advproject.config.exe.release.852024635.;com.crt.advproject.gas.exe.release.1060796060;com.crt.advproject.assembler.input.1187319663">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.crt.advproject.GCCManagedMakePerProjectProfile"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+</cproject>

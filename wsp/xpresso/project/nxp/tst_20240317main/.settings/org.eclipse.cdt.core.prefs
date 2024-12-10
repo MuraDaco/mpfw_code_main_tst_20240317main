@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+environment/project/com.crt.advproject.config.exe.debug.404965866/CODE_DIR/delimiter=\:
+environment/project/com.crt.advproject.config.exe.debug.404965866/CODE_DIR/operation=append
+environment/project/com.crt.advproject.config.exe.debug.404965866/CODE_DIR/value=${ProjDirPath}/../../../../../../..
+environment/project/com.crt.advproject.config.exe.debug.404965866/append=true
+environment/project/com.crt.advproject.config.exe.debug.404965866/appendContributed=true
+environment/project/com.crt.advproject.config.exe.release.852024635/CODE_DIR/delimiter=\:
+environment/project/com.crt.advproject.config.exe.release.852024635/CODE_DIR/operation=append
+environment/project/com.crt.advproject.config.exe.release.852024635/CODE_DIR/value=${ProjDirPath}/../../../../../../..
+environment/project/com.crt.advproject.config.exe.release.852024635/append=true
+environment/project/com.crt.advproject.config.exe.release.852024635/appendContributed=true

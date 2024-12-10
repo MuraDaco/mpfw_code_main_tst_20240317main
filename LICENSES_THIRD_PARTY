@@ -1,0 +1,36 @@
+Current module contains source code of third-party.
+
+- Current file has the only scope to tell:
+    - what are the copyrights of the third-party code
+    - what kind of license they use
+    - where their licensed code is located
+
+- List of third party code:
+    - Copyright (c) 2016 STMicroelectronics.
+        - license
+            - SPDX-License-Identifier: 
+        - folder location
+            - src/stm32f769_disco/Inc/interrupt
+            - src/stm32f769_disco/Inc/sdk_conf
+            - src/stm32f769_disco/Inc/uart
+            - src/stm32f769_disco/Src 
+                - excluding
+                    - main.cpp
+                    - ds3231*
+    - Copyright (C) 2016-2022 NXP
+        - license
+        - folder location
+            - src/nxp/Src 
+                - excluding
+                    - LPC54608_tst_freertos.cpp
+    - Copyright (C) 2019 Amazon.com, Inc. or its affiliates.
+        - license
+            - SPDX-License-Identifier: MIT
+                - see https://www.freertos.org/a00114.html
+        - folder location
+            - src/stm32f769_disco/Inc/freertos
+            - src/nxp/Inc
+    - Reza Ebrahimi 
+        - licence
+        - folder location
+            - src/stm32f769_disco/Src/ds3231*

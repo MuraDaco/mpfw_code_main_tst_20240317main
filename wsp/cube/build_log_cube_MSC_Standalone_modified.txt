@@ -1,0 +1,220 @@
+
+- compilazione sorgenti .c
+  - -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c
+  - -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF
+  - --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb
+
+- compilazione sorgenty assembler
+  - -mcpu=cortex-m7 -g3 -c -x assembler-with-cpp
+  - --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb
+
+- link
+  - -mcpu=cortex-m7 -T"../STM32F769NIHx_FLASH.ld" 
+  - --specs=nosys.specs 
+  - -Wl,-Map="MSC_Standalone.map" 
+  - -Wl,--gc-sections 
+  - -static 
+  - --specs=nano.specs 
+  - -mfpu=fpv5-d16 
+  - -mfloat-abi=hard 
+  - -mthumb 
+  - -Wl,
+  -   --start-group 
+  -     -lc -lm -Wl,
+  -   --end-group
+
+**********************************************************************************************************************************************************************************************
+
+
+BSP                                                   MSC
+
+#define HAL_MODULE_ENABLED                            #define HAL_MODULE_ENABLED
+  /* #define HAL_ADC_MODULE_ENABLED */                    /* #define HAL_ADC_MODULE_ENABLED */
+  /* #define HAL_CAN_MODULE_ENABLED */                    /* #define HAL_CAN_MODULE_ENABLED */
+  /* #define HAL_CAN_LEGACY_MODULE_ENABLED */             /* #define HAL_CAN_LEGACY_MODULE_ENABLED */
+  /* #define HAL_CEC_MODULE_ENABLED   */                  /* #define HAL_CEC_MODULE_ENABLED */
+  /* #define HAL_CRC_MODULE_ENABLED   */                  /* #define HAL_CRC_MODULE_ENABLED */
+  /* #define HAL_CRYP_MODULE_ENABLED   */                 /* #define HAL_CRYP_MODULE_ENABLED */
+  /* #define HAL_DAC_MODULE_ENABLED   */                  /* #define HAL_DAC_MODULE_ENABLED */
+#define HAL_DCMI_MODULE_ENABLED                           /* #define HAL_DCMI_MODULE_ENABLED */
+#define HAL_DMA_MODULE_ENABLED                        #define HAL_DMA_MODULE_ENABLED
+#define HAL_DMA2D_MODULE_ENABLED                      #define HAL_DMA2D_MODULE_ENABLED
+    /* #define HAL_ETH_MODULE_ENABLED  */                 /* #define HAL_ETH_MODULE_ENABLED */
+#define HAL_FLASH_MODULE_ENABLED                      #define HAL_FLASH_MODULE_ENABLED
+    /* #define HAL_NAND_MODULE_ENABLED */                 /* #define HAL_NAND_MODULE_ENABLED */
+#define HAL_NOR_MODULE_ENABLED                            /* #define HAL_NOR_MODULE_ENABLED */
+#define HAL_SRAM_MODULE_ENABLED                           /* #define HAL_SRAM_MODULE_ENABLED */
+#define HAL_SDRAM_MODULE_ENABLED                      #define HAL_SDRAM_MODULE_ENABLED
+    /* #define HAL_HASH_MODULE_ENABLED   */               /* #define HAL_HASH_MODULE_ENABLED */
+#define HAL_GPIO_MODULE_ENABLED                       #define HAL_GPIO_MODULE_ENABLED
+#define HAL_I2C_MODULE_ENABLED                        #define HAL_I2C_MODULE_ENABLED
+#define HAL_I2S_MODULE_ENABLED                            /* #define HAL_I2S_MODULE_ENABLED */
+    /* #define HAL_IWDG_MODULE_ENABLED  */                /* #define HAL_IWDG_MODULE_ENABLED */
+    /* #define HAL_LPTIM_MODULE_ENABLED */                /* #define HAL_LPTIM_MODULE_ENABLED */
+#define HAL_LTDC_MODULE_ENABLED                       #define HAL_LTDC_MODULE_ENABLED
+#define HAL_DSI_MODULE_ENABLED                            /* #define HAL_DSI_MODULE_ENABLED                        
+#define HAL_PWR_MODULE_ENABLED                        #define HAL_PWR_MODULE_ENABLED
+#define HAL_QSPI_MODULE_ENABLED                           /* #define HAL_QSPI_MODULE_ENABLED */
+#define HAL_RCC_MODULE_ENABLED                        #define HAL_RCC_MODULE_ENABLED
+    /* #define HAL_RNG_MODULE_ENABLED */                  /* #define HAL_RNG_MODULE_ENABLED */
+    /* #define HAL_RTC_MODULE_ENABLED */                  /* #define HAL_RTC_MODULE_ENABLED */
+#define HAL_SAI_MODULE_ENABLED                            /* #define HAL_SAI_MODULE_ENABLED */
+#define HAL_SD_MODULE_ENABLED                         #define HAL_SD_MODULE_ENABLED
+    /* #define HAL_SPDIFRX_MODULE_ENABLED */              /* #define HAL_SPDIFRX_MODULE_ENABLED */
+    /* #define HAL_SPI_MODULE_ENABLED    */               /* #define HAL_SPI_MODULE_ENABLED */
+#define HAL_TIM_MODULE_ENABLED                            /* #define HAL_TIM_MODULE_ENABLED */
+#define HAL_UART_MODULE_ENABLED                       #define HAL_UART_MODULE_ENABLED
+    /* #define HAL_USART_MODULE_ENABLED  */               /* #define HAL_USART_MODULE_ENABLED */
+    /* #define HAL_IRDA_MODULE_ENABLED  */                /* #define HAL_IRDA_MODULE_ENABLED */
+    /* #define HAL_SMARTCARD_MODULE_ENABLED  */           /* #define HAL_SMARTCARD_MODULE_ENABLED */
+    /* #define HAL_WWDG_MODULE_ENABLED   */               /* #define HAL_WWDG_MODULE_ENABLED */
+#define HAL_CORTEX_MODULE_ENABLED                     #define HAL_CORTEX_MODULE_ENABLED
+    /* #define HAL_PCD_MODULE_ENABLED */                  /* #define HAL_PCD_MODULE_ENABLED */
+    /* #define HAL_HCD_MODULE_ENABLED */              #define HAL_HCD_MODULE_ENABLED
+#define HAL_DFSDM_MODULE_ENABLED                          /* #define HAL_DFSDM_MODULE_ENABLED  */
+           
+
+**********************************************************************************************************************************************************************************************
+
+
+
+  void NMI_Handler(void);
+  void HardFault_Handler(void);
+  void MemManage_Handler(void);
+  void BusFault_Handler(void);
+  void UsageFault_Handler(void);
+  void SVC_Handler(void);
+  void DebugMon_Handler(void);
+  void PendSV_Handler(void);
+  void SysTick_Handler(void);
+
+#ifdef USE_USB_FS
+  void OTG_FS_IRQHandler(void);
+#else
+  void OTG_HS_IRQHandler(void);
+#endif
+  void EXTI9_5_IRQHandler(void);
+
+
+
+
+void NMI_Handler(void);
+void HardFault_Handler(void);
+void MemManage_Handler(void);
+void BusFault_Handler(void);
+void UsageFault_Handler(void);
+void SVC_Handler(void);
+void DebugMon_Handler(void);
+void PendSV_Handler(void);
+void SysTick_Handler(void);
+
+void EXTI15_10_IRQHandler(void);
+void DMA2_Stream0_IRQHandler(void);
+void DMA2_Stream5_IRQHandler(void);
+void AUDIO_DFSDMx_DMAx_BUTTOM_LEFT_IRQHandler(void);
+void AUDIO_DFSDMx_DMAx_BUTTOM_RIGHT_IRQHandler(void);
+void AUDIO_OUT_SAIx_DMAx_IRQHandler(void);
+void BSP_SDMMC_IRQHandler(void);
+
+**********************************************************************************************************************************************************************************************
+
+
+arm-none-eabi-gcc MSC_Standalone/Utilities/Log/lcd_log.c"                                                   -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Utilities/lcd_log.d"                                                -MT"Utilities/lcd_log.o"                                                --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Utilities/lcd_log.o"
+
+arm-none-eabi-gcc MSC_Standalone/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c"                -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/STM32_USBH_Library/Core/usbh_core.d"                    -MT"Middlewares/STM32_USBH_Library/Core/usbh_core.o"                    --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/STM32_USBH_Library/Core/usbh_core.o"
+arm-none-eabi-gcc MSC_Standalone/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c"              -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/STM32_USBH_Library/Core/usbh_ctlreq.d"                  -MT"Middlewares/STM32_USBH_Library/Core/usbh_ctlreq.o"                  --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/STM32_USBH_Library/Core/usbh_ctlreq.o"
+arm-none-eabi-gcc MSC_Standalone/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ioreq.c"               -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/STM32_USBH_Library/Core/usbh_ioreq.d"                   -MT"Middlewares/STM32_USBH_Library/Core/usbh_ioreq.o"                   --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/STM32_USBH_Library/Core/usbh_ioreq.o"
+arm-none-eabi-gcc MSC_Standalone/Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_pipes.c"               -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/STM32_USBH_Library/Core/usbh_pipes.d"                   -MT"Middlewares/STM32_USBH_Library/Core/usbh_pipes.o"                   --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/STM32_USBH_Library/Core/usbh_pipes.o"
+arm-none-eabi-gcc MSC_Standalone/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc.c"            -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/STM32_USBH_Library/Class/MSC/usbh_msc.d"                -MT"Middlewares/STM32_USBH_Library/Class/MSC/usbh_msc.o"                --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/STM32_USBH_Library/Class/MSC/usbh_msc.o"
+arm-none-eabi-gcc MSC_Standalone/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc_bot.c"        -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/STM32_USBH_Library/Class/MSC/usbh_msc_bot.d"            -MT"Middlewares/STM32_USBH_Library/Class/MSC/usbh_msc_bot.o"            --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/STM32_USBH_Library/Class/MSC/usbh_msc_bot.o"
+arm-none-eabi-gcc MSC_Standalone/Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc_scsi.c"       -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/STM32_USBH_Library/Class/MSC/usbh_msc_scsi.d"           -MT"Middlewares/STM32_USBH_Library/Class/MSC/usbh_msc_scsi.o"           --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/STM32_USBH_Library/Class/MSC/usbh_msc_scsi.o"
+
+arm-none-eabi-gcc MSC_Standalone/Src/usbh_diskio_dma.c"                                                     -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/FatFs/Drivers/usbh_diskio_dma.d"                        -MT"Middlewares/FatFs/Drivers/usbh_diskio_dma.o"                        --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/FatFs/Drivers/usbh_diskio_dma.o"
+
+arm-none-eabi-gcc MSC_Standalone/Middlewares/Third_Party/FatFs/src/option/syscall.c"                        -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/FatFs/Options/syscall.d"                                -MT"Middlewares/FatFs/Options/syscall.o"                                --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/FatFs/Options/syscall.o"
+arm-none-eabi-gcc MSC_Standalone/Middlewares/Third_Party/FatFs/src/option/unicode.c"                        -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/FatFs/Options/unicode.d"                                -MT"Middlewares/FatFs/Options/unicode.o"                                --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/FatFs/Options/unicode.o"
+arm-none-eabi-gcc MSC_Standalone/Middlewares/Third_Party/FatFs/src/diskio.c"                                -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/FatFs/Core/diskio.d"                                    -MT"Middlewares/FatFs/Core/diskio.o"                                    --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/FatFs/Core/diskio.o"
+arm-none-eabi-gcc MSC_Standalone/Middlewares/Third_Party/FatFs/src/ff.c"                                    -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/FatFs/Core/ff.d"                                        -MT"Middlewares/FatFs/Core/ff.o"                                        --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/FatFs/Core/ff.o"
+arm-none-eabi-gcc MSC_Standalone/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c"                            -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/FatFs/Core/ff_gen_drv.d"                                -MT"Middlewares/FatFs/Core/ff_gen_drv.o"                                --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/FatFs/Core/ff_gen_drv.o"
+
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.c"                          -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal.d"                       -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal.o"                       --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c"                   -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_cortex.d"                -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_cortex.o"                --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_cortex.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.c"                      -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dma.d"                   -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dma.o"                   --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dma.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma2d.c"                    -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dma2d.d"                 -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dma2d.o"                 --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dma2d.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.c"                   -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dma_ex.d"                -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dma_ex.o"                --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dma_ex.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dsi.c"                      -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dsi.d"                   -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dsi.o"                   --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dsi.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.c"                    -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_flash.d"                 -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_flash.o"                 --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_flash.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.c"                 -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_flash_ex.d"              -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_flash_ex.o"              --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_flash_ex.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c"                     -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_gpio.d"                  -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_gpio.o"                  --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_gpio.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_hcd.c"                      -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_hcd.d"                   -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_hcd.o"                   --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_hcd.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c"                      -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_i2c.d"                   -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_i2c.o"                   --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_i2c.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c"                   -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_i2c_ex.d"                -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_i2c_ex.o"                --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_i2c_ex.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_ltdc.c"                     -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_ltdc.d"                  -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_ltdc.o"                  --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_ltdc.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_ltdc_ex.c"                  -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_ltdc_ex.d"               -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_ltdc_ex.o"               --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_ltdc_ex.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.c"                      -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_pwr.d"                   -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_pwr.o"                   --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_pwr.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.c"                   -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_pwr_ex.d"                -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_pwr_ex.o"                --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_pwr_ex.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c"                      -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_rcc.d"                   -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_rcc.o"                   --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_rcc.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c"                   -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_rcc_ex.d"                -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_rcc_ex.o"                --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_rcc_ex.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sd.c"                       -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_sd.d"                    -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_sd.o"                    --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_sd.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sdram.c"                    -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_sdram.d"                 -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_sdram.o"                 --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_sdram.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sram.c"                     -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_sram.d"                  -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_sram.o"                  --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_sram.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c"                     -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_uart.d"                  -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_uart.o"                  --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_uart.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_fmc.c"                       -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_ll_fmc.d"                    -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_ll_fmc.o"                    --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_ll_fmc.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c"                     -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_ll_sdmmc.d"                  -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_ll_sdmmc.o"                  --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_ll_sdmmc.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.c"                       -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_ll_usb.d"                    -MT"Drivers/STM32F7xx_HAL_Driver/stm32f7xx_ll_usb.o"                    --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/stm32f7xx_ll_usb.o"
+
+arm-none-eabi-gcc MSC_Standalone/Src/system_stm32f7xx.c"                                                    -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/CMSIS/system_stm32f7xx.d"                                   -MT"Drivers/CMSIS/system_stm32f7xx.o"                                   --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/CMSIS/system_stm32f7xx.o"
+
+arm-none-eabi-gcc MSC_Standalone/Drivers/BSP/STM32F769I-Discovery/stm32f769i_discovery.c"                   -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/BSP/STM32F769I_Discovery/stm32f769i_discovery.d"            -MT"Drivers/BSP/STM32F769I_Discovery/stm32f769i_discovery.o"            --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/BSP/STM32F769I_Discovery/stm32f769i_discovery.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/BSP/STM32F769I-Discovery/stm32f769i_discovery_lcd.c"               -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/BSP/STM32F769I_Discovery/stm32f769i_discovery_lcd.d"        -MT"Drivers/BSP/STM32F769I_Discovery/stm32f769i_discovery_lcd.o"        --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/BSP/STM32F769I_Discovery/stm32f769i_discovery_lcd.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/BSP/STM32F769I-Discovery/stm32f769i_discovery_sd.c"                -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/BSP/STM32F769I_Discovery/stm32f769i_discovery_sd.d"         -MT"Drivers/BSP/STM32F769I_Discovery/stm32f769i_discovery_sd.o"         --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/BSP/STM32F769I_Discovery/stm32f769i_discovery_sd.o"
+arm-none-eabi-gcc MSC_Standalone/Drivers/BSP/STM32F769I-Discovery/stm32f769i_discovery_sdram.c"             -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/BSP/STM32F769I_Discovery/stm32f769i_discovery_sdram.d"      -MT"Drivers/BSP/STM32F769I_Discovery/stm32f769i_discovery_sdram.o"      --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/BSP/STM32F769I_Discovery/stm32f769i_discovery_sdram.o"
+
+arm-none-eabi-gcc MSC_Standalone/Drivers/BSP/Components/otm8009a/otm8009a.c"                                -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/BSP/Components/otm8009a.d"                                  -MT"Drivers/BSP/Components/otm8009a.o"                                  --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/BSP/Components/otm8009a.o"
+
+arm-none-eabi-gcc MSC_Standalone/Src/explorer.c"                                                            -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Application/User/explorer.d"                                        -MT"Application/User/explorer.o"                                        --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Application/User/explorer.o"
+arm-none-eabi-gcc MSC_Standalone/Src/file_operations.c"                                                     -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Application/User/file_operations.d"                                 -MT"Application/User/file_operations.o"                                 --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Application/User/file_operations.o"
+arm-none-eabi-gcc MSC_Standalone/Src/main.c"                                                                -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Application/User/main.d"                                            -MT"Application/User/main.o"                                            --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Application/User/main.o"
+arm-none-eabi-gcc MSC_Standalone/Src/menu.c"                                                                -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Application/User/menu.d"                                            -MT"Application/User/menu.o"                                            --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Application/User/menu.o"
+arm-none-eabi-gcc MSC_Standalone/Src/stm32f7xx_it.c"                                                        -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Application/User/stm32f7xx_it.d"                                    -MT"Application/User/stm32f7xx_it.o"                                    --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Application/User/stm32f7xx_it.o"
+arm-none-eabi-gcc MSC_Standalone/Src/usbh_conf.c"                                                           -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Application/User/usbh_conf.d"                                       -MT"Application/User/usbh_conf.o"                                       --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Application/User/usbh_conf.o"
+
+arm-none-eabi-gcc MSC_Standalone/SW4STM32/startup_stm32f769xx.s"                                            -mcpu=cortex-m7 -g3 -c -x assembler-with-cpp                                                                                                     -MMD -MP -MF"Application/SW4STM32/startup_stm32f769xx.d"                         -MT"Application/SW4STM32/startup_stm32f769xx.o"                         --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Application/SW4STM32/startup_stm32f769xx.o" 
+
+arm-none-eabi-gcc MSC_Standalone/SW4STM32/syscalls.c"                                                       -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F769xx -DUSE_STM32769I_DISCO -DUSE_USB_HS -c  -Os -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"Application/SW4STM32/syscalls.d"                                    -MT"Application/SW4STM32/syscalls.o"                                    --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Application/SW4STM32/syscalls.o"
+
+
+
+arm-none-eabi-gcc -o "MSC_Standalone.elf" @"objects.list"   
+  -mcpu=cortex-m7 -T"../STM32F769NIHx_FLASH.ld" 
+  --specs=nosys.specs 
+  -Wl,-Map="MSC_Standalone.map" 
+  -Wl,--gc-sections 
+  -static 
+  --specs=nano.specs 
+  -mfpu=fpv5-d16 
+  -mfloat-abi=hard 
+  -mthumb 
+  -Wl,
+    --start-group 
+      -lc -lm -Wl,
+    --end-group
+
+
+
+Finished building target: MSC_Standalone.elf
+ 
+arm-none-eabi-size   MSC_Standalone.elf 
+   text	   data	    bss	    dec	    hex	filename
+  56228	    268	  36156	  92652	  169ec	MSC_Standalone.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objdump -h -S  MSC_Standalone.elf  > "MSC_Standalone.list"
+Finished building: MSC_Standalone.list
+ 
+arm-none-eabi-objcopy  -O binary  MSC_Standalone.elf  "MSC_Standalone.bin"
+Finished building: MSC_Standalone.bin
+ 
+
+08:22:54 Build Finished. 0 errors, 0 warnings. (took 13s.728ms)
+

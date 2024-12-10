@@ -1,0 +1,5 @@
+/.metadata/* 
+!/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.cdt.core.prefs
+/.metadata/
+/AzureRTOS_TAD_logs/
+/FreeRTOS_TAD_logs/

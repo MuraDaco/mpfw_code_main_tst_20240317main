@@ -1,0 +1,23 @@
+# source code file
+src/common
+
+src/mac
+
+src/nxp/Src
+!/LPC54608_tst_freertos_fw2.cpp
+!/LPC54608_tst_freertos_original.cpp
+!/cpp_config.cpp
+!/ds3231.c
+!/ds3231.h
+!/ds3231_low_level.c
+!/freertos.c
+!/semihost_hardfault.c
+
+src/stm32f769_disco/Src
+!/freertos
+!/interrupt
+!/startup
+!/uart
+
+# cmake build files
+wsp/cmake/project
