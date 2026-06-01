@@ -9,6 +9,9 @@ environment/project/com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.7
 environment/project/com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.756143850/CODE_DIR/value=${ProjDirPath}/../../../../../../..
 environment/project/com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.756143850/append=true
 environment/project/com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.756143850/appendContributed=true
+environment/project/com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.756143850/test/delimiter=\:
+environment/project/com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.756143850/test/operation=append
+environment/project/com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.756143850/test/value=2
 environment/project/com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.release.1794332031/CODE_DIR/delimiter=\:
 environment/project/com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.release.1794332031/CODE_DIR/operation=append
 environment/project/com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.release.1794332031/CODE_DIR/value=${ProjDirPath}/../../../../../../..

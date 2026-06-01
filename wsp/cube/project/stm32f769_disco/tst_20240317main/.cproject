@@ -93,7 +93,6 @@
 									<listOptionValue builtIn="false" value="${workspace_loc:/${MAIN_NAME}/${SDK_PLATFORM_INTERRUPT_CONF_RPATH}}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${MAIN_NAME}/${SDK_PLATFORM_SDK_CONF_RPATH}}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${MAIN_NAME}/${SDK_PLATFORM_UART_CONF_RPATH}}"/>
-
 									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/cg}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/kr/krThread/v_${tst_20240317app_AP_KR_THREAD02_VER}}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/kr/krTimer/v_${tst_20240317app_AP_KR_TIMER01_VER}}"/>
@@ -105,7 +104,6 @@
 									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/kr/krThread/v_${tst_20240317app_TB_KR_THREAD_VER}}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/kr/krTimer/v_${tst_20240317app_TB_KR_TIMER_VER}}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/sv/svStateMachine/v_${tst_20240317app_TB_SV_STATE_MACHINE_VER}}"/>
-
 									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_resources/stm32f769_disco/src/rs/rsSerial/v_${fw2_wrapper_resources_RS_SERIAL_VER}}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_resources/stm32f769_disco/src/rs/rsSerial/v_${fw2_wrapper_resources_RS_SERIAL_VER}/sdk_uart_pub}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/cg}"/>
@@ -266,7 +264,6 @@
 									<listOptionValue builtIn="false" value="${workspace_loc:/${MAIN_NAME}/${SDK_PLATFORM_INTERRUPT_CONF_RPATH}}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${MAIN_NAME}/${SDK_PLATFORM_SDK_CONF_RPATH}}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${MAIN_NAME}/${SDK_PLATFORM_UART_CONF_RPATH}}"/>
-
 									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/cg}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/kr/krThread/v_${tst_20240317app_AP_KR_THREAD02_VER}}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/kr/krTimer/v_${tst_20240317app_AP_KR_TIMER01_VER}}"/>
@@ -278,7 +275,6 @@
 									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/kr/krThread/v_${tst_20240317app_TB_KR_THREAD_VER}}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/kr/krTimer/v_${tst_20240317app_TB_KR_TIMER_VER}}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/tst_20240317app/src/tb/sv/svStateMachine/v_${tst_20240317app_TB_SV_STATE_MACHINE_VER}}"/>
-
 									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_resources/stm32f769_disco/src/rs/rsSerial/v_${fw2_wrapper_resources_RS_SERIAL_VER}}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_wrapper_resources/stm32f769_disco/src/rs/rsSerial/v_${fw2_wrapper_resources_RS_SERIAL_VER}/sdk_uart_pub}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/fw2_core_core/src/cg}"/>
